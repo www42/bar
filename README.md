@@ -1,5 +1,5 @@
 # Welcome!
 
-This is the repo of the world famous **Azure for Trainers-Blog**.
+#### This is the repo of the world-famous [**Azure for Trainers-Blog**](https://www42.github.io/bar/).
 
-Goto [https://www42.github.io/bar/](https://www42.github.io/bar/) to read the blog. Enjoy!
+Enjoy!
