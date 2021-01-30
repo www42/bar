@@ -21,11 +21,16 @@
 title: Azure for Trainers Blog
 email: thomas.jaekel@gfn.training
 description: >- # this means to ignore newlines until "baseurl:"
-  This is the world famous Azure for Trainers blog site. Have fun.
+  This is the world-famous Azure for Trainers blog site. Have fun!
 baseurl: "/bar" # the subpath of your site, e.g. /blog
 url: "https://www42.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tjkkll
 github_username:  www42
+
+# Fields minima uses, but are not defaulted with the `jekyll new` command
+author: Thomas Jäkel
+linkedin_username: tjkkll
+
 
 # Build settings
 theme: minima
