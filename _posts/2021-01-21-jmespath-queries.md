@@ -1,21 +1,26 @@
 ---
-layout: post
-title:  "JMESPath queries to filter Azure CLI output"
-date:   2021-01-28 17:30:00 +0100
-categories: Azure Cloud JMESPath
+layout:     post
+title:      "JMESPath Queries"
+date:       2021-01-21 17:30:00 +0100
+categories: Azure CLI JMESPath
+image1:     assets/images/2021-01-21-jmespath-queries/jpterm.png
 ---
 
-[jmespath]:https://jmespath.org/
-[msdocs]:https://docs.microsoft.com/en-us/cli/azure/query-azure-cli
-[jpterm]:https://github.com/jmespath/jmespath.terminal
-[citadel]:https://azurecitadel.com/prereqs/cli/cli-3-jmespath/
+[ms-docs]:        https://docs.microsoft.com/en-us/cli/azure/query-azure-cli
+[azure-citadel]:  https://azurecitadel.com/prereqs/cli/cli-3-jmespath/
+[jmespath]:       https://jmespath.org/
+[jpterm]:         https://github.com/jmespath/jmespath.terminal
 
 
-# `JMESPath` queries to filter `Azure CLI` output
+JMESPath queries are very useful to filter Azure CLI output.
 
-## Arrays and Objects
+This post is an excerpt of:
+* Query command results with Azure CLI - [Microsoft Docs][ms-docs]
+* CLI 2.0 JMESPATH - [Azure Citadel][azure-citadel]
 
-In the JSON world there are two kinds of things - arrays and objects.
+### Arrays and Objects
+
+In the JSON world there are two kinds of things - arrays and objects. For a complete language specification see [JMESPath.org][jmespath].
 
 An object is a collection of `key:value` pairs surrounded by curly brackets, eg
 
@@ -53,7 +58,7 @@ Assuming JSON as the default output format it is a common need to filter the out
 
 
 
-## Selecting Array Elements
+### Selecting Array Elements
 
 ```bash
 az group list                           # array starting point
@@ -72,7 +77,7 @@ az group list --query "[:1]"            # array (with a single object)
 ```
 
 
-## Selecting an Individual Value of an Object
+### Selecting an Individual Value of an Object
 
 ```bash
 az group list --query "[0]"             # single object starting point
@@ -83,7 +88,7 @@ az group list --query "[0].properties.provisioningState"  # value for provisioni
 ```
 
 
-## Selecting Multiple Values
+### Selecting Multiple Values
 
 ```bash
 az group list --query "[0].[name,location]"
@@ -106,7 +111,7 @@ query="[*].{name:name,location:location}"
 az group list --query $query
 ```
 
-## Filter Objects
+### Filter Objects
 
 Projection Operator  `?key=='value'`
 
@@ -127,7 +132,7 @@ What other comapators do exist?
 
 
 
-## Functions
+### Functions
 
 ```bash
 # length()
@@ -153,7 +158,7 @@ az group list --query "[?name=='Cloudshell-RG'].name"           # array of a sin
 az group list --query "[?name=='Cloudshell-RG'].name | [0]"     # string
 ```
 
-## Flatten an Array 
+### Flatten an Array 
 
 Flatten Operator `[]`
 
@@ -188,10 +193,10 @@ Example 2 (`jpterm flat2.json`)
 #   foo[*].numbers.[]               [1,2,3,4,5,6]
 ```
 
-## Tool `jpterm`
+### Tool `jpterm`
 
 Great tool for exploring JMESPath queries.
 
-<img src="img/jpterm.png" alt="jpterm" width="800"/>
+<img src="{{ page.image1 | relative_url }}" alt="jpterm" width="800"/>
 
 Tipp: `^-5` erase JMESPath expression

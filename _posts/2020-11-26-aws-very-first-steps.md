@@ -1,13 +1,16 @@
 ---
-layout: post
-title:  "AWS very first steps"
-date:   2020-11-26 17:30:00 +0100
+layout:     post
+title:      "AWS - Very First Steps"
+date:       2020-11-26 17:30:00 +0100
 categories: AWS Cloud
+image1: /assets/images/2020-11-26-aws-very-first-steps/Free-tier-alert.png
+image2: /assets/images/2020-11-26-aws-very-first-steps/IAM-user-access-key.png
+image3: /assets/images/2020-11-26-aws-very-first-steps/IAM-user-permisssions.png
+image4: /assets/images/2020-11-26-aws-very-first-steps/Root-user-login.png
 ---
 
-# AWS - Very First Steps
 
-## Create Amazon account.
+### Create an Amazon account.
 
 This account is the *Root user*. You need an email address, telephone number, credit card. MFA is optional but highly recommended (e.g. Google authenticator).
 
@@ -18,22 +21,24 @@ Tipp: Keep the Root user account separate from your others Amazon account(s).
 
 
 
-## Explore the  Management Console.
+### Explore the  Management Console.
 
-[https://console.aws.amazon.com/](https://console.aws.amazon.com/)
+Management Console is AWS's graphical user interface, portal if you will. Sign in as the *Root user* you created in the previous step.
 
-That's the GUI. Sign in as the Root user.
+<img src="{{ page.image4 | relative_url }}" alt="Root user login" width="300"/>
 
-<img src="img/Root-user-login.png" alt="Root user login" width="300"/>
-
-
+Start here: [https://console.aws.amazon.com/](https://console.aws.amazon.com/)
 
 
-## Configure Free Tier Usage Alerts
+
+
+
+
+### Configure Free Tier Usage Alerts.
 
 In Management Console search for *Billing*.
 
-<img src="img/Free-tier-alert.png" alt="Free tier usage alert" width="400"/>
+<img src="{{ page.image1 | relative_url }}" alt="Free tier usage alert" width="400"/>
 
 
 
@@ -45,11 +50,11 @@ Add user: Enable both *Programmatic access* as well as *AWS Management Console a
 
 Set permissions: Attach existing policies directly (AdministratorAccess)
 
-<img src="img/IAM-user-permisssions.png" alt="IAM user permissions" width="400"/>
+<img src="{{ page.image3 | relative_url }}" alt="IAM user permissions" width="400"/>
 
 Copy IAM user's access key and access key ID for later use.
 
-<img src="img/IAM-user-access-key.png" alt="IAM user access key" width="400"/>
+<img src="{{ page.image2 | relative_url }}" alt="IAM user access key" width="400"/>
 
 
 
