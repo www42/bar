@@ -22,7 +22,7 @@ echo 'layout:     post'                                          >> $postfile
 echo 'title:      "GitHub Pages - Getting started"'              >> $postfile
 echo 'date:       2021-01-28 17:30:00 +0100'                     >> $postfile
 echo 'categories: Git GitHub'                                    >> $postfile
-echo "image:      $postimgpath/foo.png"                          >> $postfile
+echo "image:      /$postimgpath/foo.png"                         >> $postfile
 echo '---'                                                       >> $postfile
 
 cat $postfile
